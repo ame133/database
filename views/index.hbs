@@ -1,0 +1,33 @@
+{{>header}}
+{{>navbar}}
+
+        <div class="contenedor">
+    <h1>BASE DE DATOS</h1>
+    {{#if pintores }}
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Nombre</td>
+                    <td>Nacionalidad</td>
+                    <td>Corriente</td>
+                    <td>imagen</td>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each pintores}}
+                <tr>
+                    <td>{{_id}}</td>
+                    <td>{{name}}</td>
+                    <td>{{nacionalidad}}</td>
+                    <td>{{corriente}}</td>
+                    <td><img src="../images/{{pintura}}" width="200px" height="180px"></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    {{ else }}
+        <div>no se encuentran pintores</div>
+    {{/if}}
+    </div>
+{{>footer}}
